@@ -3,3 +3,4 @@ compinit
 promptinit
 
 prompt redhat
+zstyle ':completion:*' menu select
