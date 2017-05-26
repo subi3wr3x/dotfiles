@@ -69,7 +69,7 @@ $ sudo dnf -y install ~/Downloads/atom.rpm
 $ rm ~/Downloads/atom.rpm
 ```
 
-### Install Gimp, mpv, youtube-dl, Transmission, GNOME Music
+### Install GIMP, mpv, youtube-dl, Transmission, Music, Tweak Tool
 
 ```
 $ sudo dnf install gimp mpv youtube-dl transmission-gtk gnome-music gnome-tweak-tool
