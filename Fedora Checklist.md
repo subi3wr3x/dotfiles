@@ -30,22 +30,16 @@ $ sudo ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fon
 ### Add "packagecount" alias:
 
 ```
-$ vi ~/.bashrc
+$ echo "alias packagecount='rpm -qa | wc -l'" >> ~/.bashrc
 ```
-add to the bottom:
-
-`alias packagecount='rpm -qa | wc -l'`
 
 
 ### Auto mount storage drive:
 
 ```
 $ sudo mkdir /mnt/Storage/
-$ sudo vi /etc/fstab
+$ sudo sh -c 'echo -e "UUID=F046-D108\t\t/mnt/Storage/\t\tvfat\tuser,rw,umask=000,dmask=000\t0 0" >> /etc/fstab'
 ```
-add to the bottom:
-
-`UUID=F046-D108 /mnt/Storage/ vfat user,rw,umask=000,dmask=000 0 0`
 
 
 ### Symbolic link music:
