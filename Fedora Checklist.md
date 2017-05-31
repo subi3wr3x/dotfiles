@@ -27,12 +27,12 @@ $ sudo ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/c
 $ sudo ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
 ```
 
-### Add "packagecount" alias:
+### Add aliases:
 
 ```
 $ echo "alias packagecount='rpm -qa | wc -l'" >> ~/.bashrc
+$ echo "alias fullupdate='sudo dnf update -y && sudo dnf distro-sync -y && sudo dnf autoremove -y && sudo dnf clean all && sudo dnf update -y'" >> ~/.bashrc
 ```
-
 
 ### Auto mount storage drive:
 
@@ -41,13 +41,11 @@ $ sudo mkdir /mnt/Storage/
 $ sudo sh -c 'echo -e "UUID=F046-D108\t\t/mnt/Storage/\t\tvfat\tuser,rw,umask=000,dmask=000\t0 0" >> /etc/fstab'
 ```
 
-
 ### Symbolic link music:
 
 ```
 $ ln -s /mnt/Storage/Music/ ~/Music
 ```
-
 
 ### Discord
 
@@ -74,7 +72,6 @@ $ rm ~/Downloads/atom.rpm
 ```
 $ sudo dnf install gimp mpv youtube-dl transmission-gtk gnome-music gnome-tweak-tool
 ```
-
 
 ### Firefox "Open With"
 mpv:
