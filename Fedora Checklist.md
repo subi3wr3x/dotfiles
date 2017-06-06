@@ -70,5 +70,8 @@ $ sudo dnf install gimp gnome-music gnome-tweak-tool steam transmission-gtk mpv 
 mpv:
 `--no-resume-playback`
 
-youtube-dl:
+youtube-dl (video):
 `-o ~/Videos/%(title)s.%(ext)s`
+
+youtube-dl (audio):
+`-f bestaudio -o ~/Videos/%(title)s.%(ext)s`
