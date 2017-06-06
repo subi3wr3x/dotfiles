@@ -34,7 +34,7 @@ $ sudo mount -a
 $ ln -s /mnt/Storage/Music/ ~/Music
 ```
 
-#### Discord
+#### Install Discord
 ```
 $ wget -O ~/Downloads/discord-linux.tar.gz "https://discordapp.com/api/download?platform=linux&format=tar.gz"
 $ tar -xzvf ~/Downloads/discord-linux.tar.gz -C ~/Downloads/
