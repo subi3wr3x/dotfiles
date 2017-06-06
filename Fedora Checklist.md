@@ -31,6 +31,7 @@ $ echo "alias fullupdate='sudo dnf update -y && sudo dnf distro-sync -y && sudo 
 ```
 $ sudo mkdir /mnt/Storage/
 $ sudo sh -c 'echo -e "UUID=F046-D108\t\t/mnt/Storage/\t\tvfat\tuser,rw,umask=000,dmask=000\t0 0" >> /etc/fstab'
+$ sudo mount -a
 ```
 
 ### Symbolic link music:
