@@ -4,14 +4,6 @@
 $ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 ```
 
-### Steam
-
-```
-$ sudo dnf config-manager --add-repo=http://negativo17.org/repos/fedora-steam.repo
-$ sudo dnf -y install steam
-$ sudo setsebool -P allow_execheap 1
-```
-
 ### Spotify
 
 ```
@@ -67,10 +59,10 @@ $ sudo dnf -y install ~/Downloads/atom.rpm
 $ rm ~/Downloads/atom.rpm
 ```
 
-### Install GIMP, mpv, youtube-dl, Transmission, Music, Tweak Tool
+### Install GIMP, mpv, youtube-dl, Transmission, Music, Tweak Tool, Steam
 
 ```
-$ sudo dnf install gimp mpv youtube-dl transmission-gtk gnome-music gnome-tweak-tool
+$ sudo dnf install gimp mpv youtube-dl transmission-gtk gnome-music gnome-tweak-tool steam
 ```
 
 ### Firefox "Open With"
