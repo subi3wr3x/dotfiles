@@ -59,10 +59,10 @@ $ sudo dnf -y install ~/Downloads/atom.rpm
 $ rm ~/Downloads/atom.rpm
 ```
 
-### Install GIMP, GNOME Music, Steam, Transmission, Tweak Tool, mpv, youtube-dl
+### Install GIMP, GNOME Music, GNOME Tweak Tool, Steam, Transmission, mpv, youtube-dl
 
 ```
-$ sudo dnf install gimp gnome-music steam transmission-gtk gnome-tweak-tool mpv youtube-dl
+$ sudo dnf install gimp gnome-music gnome-tweak-tool steam transmission-gtk mpv youtube-dl
 ```
 
 ### Firefox "Open With"
