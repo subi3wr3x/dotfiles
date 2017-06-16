@@ -1,15 +1,15 @@
-#### Enable RPMFusion
+#### Enable RPMFusion:
 ```
 $ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 ```
 
-#### Spotify
+#### Spotify:
 ```
 $ sudo dnf config-manager --add-repo=http://negativo17.org/repos/fedora-spotify.repo
 $ sudo dnf -y install spotify-client
 ```
 
-#### Fonts
+#### Fonts:
 ```
 $ sudo dnf -y install freetype-freeworld
 $ sudo ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
@@ -34,7 +34,7 @@ $ sudo mount -a
 $ ln -s /mnt/Storage/Music/ ~/Music
 ```
 
-#### Install Discord
+#### Install Discord:
 ```
 $ wget -O ~/Downloads/discord-linux.tar.gz "https://discordapp.com/api/download?platform=linux&format=tar.gz"
 $ tar -xzvf ~/Downloads/discord-linux.tar.gz -C ~/Downloads/
@@ -45,19 +45,19 @@ $ sudo ln -s /usr/share/discord/Discord /usr/bin/discord
 $ rm ~/Downloads/discord-linux.tar.gz
 ```
 
-#### Install Atom
+#### Install Atom:
 ```
 $ wget -O ~/Downloads/atom.rpm "https://atom.io/download/rpm"
 $ sudo dnf -y install ~/Downloads/atom.rpm
 $ rm ~/Downloads/atom.rpm
 ```
 
-#### Install GIMP, GNOME Music, GNOME Tweak Tool, Steam, Transmission, mpv, youtube-dl
+#### Install GIMP, GNOME Music, GNOME Tweak Tool, Steam, Transmission, mpv, youtube-dl:
 ```
 $ sudo dnf install gimp gnome-music gnome-tweak-tool steam transmission-gtk mpv youtube-dl
 ```
 
-#### Firefox "Open With"
+#### Firefox "Open With":
 mpv:
 `--no-resume-playback`
 
