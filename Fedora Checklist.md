@@ -3,35 +3,35 @@
 $ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 ```
 
-#### Spotify:
-```
-$ sudo dnf config-manager --add-repo=http://negativo17.org/repos/fedora-spotify.repo
-$ sudo dnf -y install spotify-client
-```
-
-#### Fonts:
+#### Fix Font Rendering:
 ```
 $ sudo dnf -y install freetype-freeworld
 $ sudo ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
 $ sudo ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
 ```
 
-#### Add aliases:
+#### Add Aliases:
 ```
 $ echo "alias packagecount='rpm -qa | wc -l'" >> ~/.bashrc
 $ echo "alias fullupdate='sudo dnf update -y && sudo dnf distro-sync -y && sudo dnf autoremove -y && sudo dnf clean all && sudo dnf update -y'" >> ~/.bashrc
 ```
 
-#### Auto mount storage drive:
+#### Auto Mount Storage Drive:
 ```
 $ sudo mkdir /mnt/Storage/
 $ sudo sh -c 'echo -e "UUID=F046-D108\t\t/mnt/Storage/\t\tvfat\tuser,rw,umask=000,dmask=000\t0 0" >> /etc/fstab'
 $ sudo mount -a
 ```
 
-#### Symbolic link music:
+#### Symbolic Link Music:
 ```
 $ ln -s /mnt/Storage/Music/ ~/Music
+```
+
+#### Install Spotify:
+```
+$ sudo dnf config-manager --add-repo=http://negativo17.org/repos/fedora-spotify.repo
+$ sudo dnf -y install spotify-client
 ```
 
 #### Install Discord:
