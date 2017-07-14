@@ -1,6 +1,6 @@
 #### Enable RPM Fusion:
 ```
-$ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+$ sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 ```
 
 #### Fix Font Rendering:
@@ -19,7 +19,7 @@ $ echo "alias fullupdate='sudo dnf update -y && sudo dnf distro-sync -y && sudo 
 #### Auto Mount Storage Drive:
 ```
 $ sudo mkdir /mnt/Storage/
-$ sudo sh -c 'echo -e "UUID=F046-D108 /mnt/Storage/                           vfat    user,rw,umask=000,dmask=000 0 0" >> /etc/fstab'
+$ sudo bash -c 'echo -e "UUID=F046-D108 /mnt/Storage/                           vfat    user,rw,umask=000,dmask=000 0 0" >> /etc/fstab'
 $ sudo mount -a
 ```
 
@@ -54,7 +54,7 @@ $ rm ~/Downloads/atom.rpm
 
 #### Install GIMP, GNOME Music, GNOME Tweak Tool, Steam, Transmission, mpv, youtube-dl:
 ```
-$ sudo dnf install gimp gnome-music gnome-tweak-tool steam transmission-gtk mpv youtube-dl
+$ sudo dnf -y install gimp gnome-music gnome-tweak-tool steam transmission-gtk mpv youtube-dl
 ```
 
 #### Firefox "Open With":
