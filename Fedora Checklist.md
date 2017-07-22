@@ -13,7 +13,7 @@ $ sudo ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fon
 #### Add Aliases:
 ```
 $ echo "alias packagecount='rpm -qa | wc -l'" >> ~/.bashrc
-$ echo "alias fullupdate='sudo dnf update -y && sudo dnf distro-sync -y && sudo dnf autoremove -y && sudo dnf clean all && sudo dnf update -y'" >> ~/.bashrc
+$ echo "alias fullupdate='sudo dnf update -y && sudo dnf distro-sync -y && sudo dnf autoremove -y && sudo dnf clean all" >> ~/.bashrc
 ```
 
 #### Auto Mount Storage Drive:
