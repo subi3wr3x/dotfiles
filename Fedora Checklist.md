@@ -19,7 +19,7 @@ $ echo "alias fullupdate='sudo dnf update -y && sudo dnf distro-sync -y && sudo 
 #### Auto Mount Storage Drive:
 ```
 $ sudo mkdir /mnt/Storage/
-$ sudo bash -c 'echo -e "UUID=F046-D108 /mnt/Storage/                    vfat    user,rw,umask=000,dmask=000 0 0" >> /etc/fstab'
+$ sudo bash -c 'echo -e "UUID=F046-D108 /mnt/Storage/ vfat user,rw,umask=000,dmask=000 0 0" >> /etc/fstab'
 $ sudo mount -a
 ```
 
