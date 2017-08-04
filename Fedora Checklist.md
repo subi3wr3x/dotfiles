@@ -28,6 +28,11 @@ $ sudo mount -a
 $ ln -s /mnt/Storage/Music/ ~/Music
 ```
 
+#### Set SELinux to permissive mode:
+```
+$sudo sed -i s/^SELINUX=.*$/SELINUX=permissive/g /etc/selinux/config
+```
+
 #### Install Spotify:
 ```
 $ sudo dnf config-manager --add-repo=http://negativo17.org/repos/fedora-spotify.repo
