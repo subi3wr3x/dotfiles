@@ -30,7 +30,7 @@ $ ln -s /mnt/Storage/Music/ ~/Music
 
 #### Set SELinux to permissive mode:
 ```
-$sudo sed -i s/^SELINUX=.*$/SELINUX=permissive/g /etc/selinux/config
+$ sudo sed -i s/^SELINUX=.*$/SELINUX=permissive/g /etc/selinux/config
 ```
 
 #### Install Spotify:
