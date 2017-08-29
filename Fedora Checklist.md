@@ -33,12 +33,6 @@ $ ln -s /mnt/Storage/Music/ ~/Music
 $ sudo sed -i s/^SELINUX=.*$/SELINUX=permissive/g /etc/selinux/config
 ```
 
-#### Install Spotify:
-```
-$ sudo dnf config-manager --add-repo=http://negativo17.org/repos/fedora-spotify.repo
-$ sudo dnf -y install spotify-client
-```
-
 #### Install Discord:
 ```
 $ wget -O ~/Downloads/discord-linux.tar.gz "https://discordapp.com/api/download?platform=linux&format=tar.gz"
@@ -49,13 +43,6 @@ $ sudo ln -s /usr/share/discord/discord.png /usr/share/icons/
 $ sudo ln -s /usr/share/discord/Discord /usr/bin/discord
 $ rm ~/Downloads/discord-linux.tar.gz
 $ sudo dnf -y install libcxx
-```
-
-#### Install Atom:
-```
-$ wget -O ~/Downloads/atom.rpm "https://atom.io/download/rpm"
-$ sudo dnf -y install ~/Downloads/atom.rpm
-$ rm ~/Downloads/atom.rpm
 ```
 
 #### Install GNOME Music, GNOME Tweaks, Steam, Transmission, mpv, youtube-dl:
