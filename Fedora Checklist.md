@@ -13,7 +13,7 @@ $ sudo ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fon
 #### Add Aliases:
 ```
 $ echo "alias packagecount='rpm -qa | wc -l'" >> ~/.bashrc
-$ echo "alias fullupdate='sudo dnf update -y && sudo dnf distro-sync -y && sudo dnf autoremove -y && sudo dnf clean all" >> ~/.bashrc
+$ echo "alias fullupdate='sudo dnf update -y && sudo dnf distro-sync -y && sudo dnf autoremove -y && sudo dnf clean all'" >> ~/.bashrc
 ```
 
 #### Auto Mount Storage Drive:
@@ -48,6 +48,7 @@ $ sudo ln -s /usr/share/discord/discord.desktop /usr/share/applications/
 $ sudo ln -s /usr/share/discord/discord.png /usr/share/icons/
 $ sudo ln -s /usr/share/discord/Discord /usr/bin/discord
 $ rm ~/Downloads/discord-linux.tar.gz
+$ sudo dnf -y install libcxx
 ```
 
 #### Install Atom:
