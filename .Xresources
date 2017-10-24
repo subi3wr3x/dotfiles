@@ -63,7 +63,7 @@ xterm*termName: xterm-256color
 *.color12:      base04
 *.color13:      base06
 *.color14:      base0F
-*.color15: base07
+*.color15:      base07
 
 ! stop output to terminal from jumping down to bottom of scroll again
 xterm*scrollTtyOutput: false
