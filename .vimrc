@@ -15,3 +15,7 @@ set softtabstop=4
 
 " On pressing tab, insert 4 spaces
 set expandtab
+
+" Set color scheme
+" colorscheme base16-default-dark
+" let base16colorspace=256
