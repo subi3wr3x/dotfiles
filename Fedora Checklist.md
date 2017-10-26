@@ -1,6 +1,6 @@
-#### Enable RPM Fusion:
+#### Enable RPM Fusion "free" repo:
 ```
-$ sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+$ sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 ```
 
 #### Fix Font Rendering:
@@ -23,31 +23,21 @@ $ sudo bash -c 'echo -e "UUID=F046-D108 /mnt/Storage/ vfat user,rw,umask=000,dma
 $ sudo mount -a
 ```
 
-#### Symbolic Link Music:
-```
-$ ln -s /mnt/Storage/Music/ ~/Music
-```
-
 #### Set SELinux to permissive mode:
 ```
 $ sudo sed -i s/^SELINUX=.*$/SELINUX=permissive/g /etc/selinux/config
 ```
 
-#### Install Discord:
+#### Install GNOME Tweaks, Transmission, mpv, and youtube-dl:
 ```
-$ wget -O ~/Downloads/discord-linux.tar.gz "https://discordapp.com/api/download?platform=linux&format=tar.gz"
-$ tar -xzvf ~/Downloads/discord-linux.tar.gz -C ~/Downloads/
-$ sudo mv ~/Downloads/Discord/ /usr/share/discord/
-$ sudo ln -s /usr/share/discord/discord.desktop /usr/share/applications/
-$ sudo ln -s /usr/share/discord/discord.png /usr/share/icons/
-$ sudo ln -s /usr/share/discord/Discord /usr/bin/discord
-$ rm ~/Downloads/discord-linux.tar.gz
-$ sudo dnf -y install libcxx
+$ sudo dnf -y install gnome-tweak-tool transmission-gtk mpv youtube-dl
 ```
 
-#### Install GNOME Music, GNOME Tweaks, Steam, Transmission, mpv, youtube-dl:
+#### Install Steam, Spotify, and Discord via Flatpak:
 ```
-$ sudo dnf -y install gnome-music gnome-tweak-tool steam transmission-gtk mpv youtube-dl
+$ flatpak install --from https://flathub.org/repo/appstream/com.valvesoftware.Steam.flatpakref 
+$ flatpak install --from https://flathub.org/repo/appstream/com.spotify.Client.flatpakref 
+$ flatpak install --from https://flathub.org/repo/appstream/com.discordapp.Discord.flatpakref 
 ```
 
 #### Firefox "Open With":
