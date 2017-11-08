@@ -1,5 +1,5 @@
 sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y
-sudo apt install xorg i3 firefox fonts-hack-ttf lxappearance pcmanfm 
+sudo apt install xorg i3 firefox fonts-hack-ttf lxappearance pcmanfm fonts-font-awesome
 mkdir ~/.config/
 mkdir ~/.config/i3/
 mkdir ~/.config/i3status/
