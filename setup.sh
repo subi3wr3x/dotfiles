@@ -1,3 +1,4 @@
+mkdir ~/.config/
 mkdir ~/.config/i3/
 mkdir ~/.config/i3status/
 curl http://raw.githubusercontent.com/iBurley/dotfiles/master/.xinitrc > ~/.xinitrc
