@@ -6,13 +6,16 @@ $ sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free
 #### Fix Font Rendering:
 ```
 $ sudo dnf -y install freetype-freeworld
+$ sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-slight.conf /etc/fonts/conf.d/
 $ sudo ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
 $ sudo ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
+$ sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 ```
 
 #### Add Aliases:
 ```
 $ echo "alias packagecount='rpm -qa | wc -l'" >> ~/.bashrc
+$ echo "alias clearswap='sudo swapoff -a && sudo swapon -a'" >> ~/.bashrc
 $ echo "alias fullupdate='sudo dnf update -y && sudo dnf distro-sync -y && sudo dnf autoremove -y && sudo dnf clean all && flatpak update'" >> ~/.bashrc
 ```
 
@@ -35,9 +38,9 @@ $ sudo dnf -y install gnome-tweak-tool transmission-gtk mpv youtube-dl
 
 #### Install Steam, Spotify, and Discord via Flatpak:
 ```
-$ flatpak install --from https://flathub.org/repo/appstream/com.valvesoftware.Steam.flatpakref 
-$ flatpak install --from https://flathub.org/repo/appstream/com.spotify.Client.flatpakref 
-$ flatpak install --from https://flathub.org/repo/appstream/com.discordapp.Discord.flatpakref 
+$ flatpak install --from https://flathub.org/repo/appstream/com.valvesoftware.Steam.flatpakref -y
+$ flatpak install --from https://flathub.org/repo/appstream/com.spotify.Client.flatpakref -y
+$ flatpak install --from https://flathub.org/repo/appstream/com.discordapp.Discord.flatpakref -y
 ```
 
 #### Firefox "Open With":
