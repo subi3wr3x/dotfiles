@@ -1,6 +1,12 @@
-#### Enable RPM Fusion "free" repo:
+#### Enable RPM Fusion "free" and "nonfree" repos:
 ```
-$ sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+$ sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+```
+
+#### Install Nvidia Drivers and disable Wayland in GDM:
+```
+sudo dnf -y install xorg-x11-drv-nvidia akmod-nvidia && sudo dnf update -y
+sudo sed -i '/WaylandEnable=false/s/^#//' /etc/gdm/custom.conf
 ```
 
 #### Fix Font Rendering:
@@ -36,11 +42,11 @@ $ sudo sed -i s/^SELINUX=.*$/SELINUX=permissive/g /etc/selinux/config
 $ sudo dnf -y install gnome-tweak-tool transmission-gtk mpv youtube-dl
 ```
 
-#### Install Steam, Spotify, and Discord via Flatpak:
+#### Install Discord, Steam, and Spotify via Flatpak:
 ```
+$ flatpak install --from https://flathub.org/repo/appstream/com.discordapp.Discord.flatpakref -y
 $ flatpak install --from https://flathub.org/repo/appstream/com.valvesoftware.Steam.flatpakref -y
 $ flatpak install --from https://flathub.org/repo/appstream/com.spotify.Client.flatpakref -y
-$ flatpak install --from https://flathub.org/repo/appstream/com.discordapp.Discord.flatpakref -y
 ```
 
 #### Firefox "Open With":
