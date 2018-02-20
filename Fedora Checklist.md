@@ -28,7 +28,7 @@ $ echo "alias fullupdate='sudo dnf update -y && sudo dnf autoremove -y && sudo d
 #### Auto Mount Storage Drive:
 ```
 $ sudo mkdir /mnt/Storage/
-$ sudo bash -c 'echo -e "UUID=F046-D108 /mnt/Storage/ vfat user,rw,umask=000,dmask=000 0 0" >> /etc/fstab'
+$ sudo bash -c 'echo -e "UUID=64a9314e-07d8-47dd-94a6-d1a55851b12d /mnt/Storage/ ext4 defaults 0 0" >> /etc/fstab'
 $ sudo mount -a
 ```
 
