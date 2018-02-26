@@ -22,7 +22,7 @@ $ sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf
 ```
 $ echo "alias packagecount='rpm -qa | wc -l'" >> ~/.bashrc
 $ echo "alias clearswap='sudo swapoff -a && sudo swapon -a'" >> ~/.bashrc
-$ echo "alias fullupdate='sudo dnf update -y && sudo dnf autoremove -y && sudo dnf clean all && flatpak update -y'" >> ~/.bashrc
+$ echo "alias fullupdate='sudo dnf update -y && sudo dnf autoremove -y && sudo dnf clean all'" >> ~/.bashrc
 ```
 
 #### Auto-mount storage drive:
