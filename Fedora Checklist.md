@@ -3,13 +3,13 @@
 $ sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 ```
 
-#### Install Nvidia Drivers and disable Wayland in GDM:
+#### Install Nvidia drivers and disable Wayland in GDM:
 ```
 sudo dnf -y install xorg-x11-drv-nvidia akmod-nvidia && sudo dnf update -y
 sudo sed -i '/WaylandEnable=false/s/^#//' /etc/gdm/custom.conf
 ```
 
-#### Fix Font Rendering:
+#### Fix font rendering:
 ```
 $ sudo dnf -y install freetype-freeworld
 $ sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-slight.conf /etc/fonts/conf.d/
@@ -18,14 +18,14 @@ $ sudo ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fon
 $ sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 ```
 
-#### Add Aliases:
+#### Add aliases:
 ```
 $ echo "alias packagecount='rpm -qa | wc -l'" >> ~/.bashrc
 $ echo "alias clearswap='sudo swapoff -a && sudo swapon -a'" >> ~/.bashrc
 $ echo "alias fullupdate='sudo dnf update -y && sudo dnf autoremove -y && sudo dnf clean all && flatpak update -y'" >> ~/.bashrc
 ```
 
-#### Auto Mount Storage Drive:
+#### Auto-mount storage drive:
 ```
 $ sudo mkdir /mnt/Storage/
 $ sudo bash -c 'echo -e "UUID=64a9314e-07d8-47dd-94a6-d1a55851b12d /mnt/Storage/ ext4 defaults 0 0" >> /etc/fstab'
