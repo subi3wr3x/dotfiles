@@ -5,8 +5,8 @@ $ sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free
 
 #### Install Nvidia drivers and disable Wayland in GDM:
 ```
-sudo dnf -y install xorg-x11-drv-nvidia akmod-nvidia && sudo dnf update -y
-sudo sed -i '/WaylandEnable=false/s/^#//' /etc/gdm/custom.conf
+$ sudo dnf -y install xorg-x11-drv-nvidia akmod-nvidia && sudo dnf update -y
+$ sudo sed -i '/WaylandEnable=false/s/^#//' /etc/gdm/custom.conf
 ```
 
 #### Fix font rendering:
