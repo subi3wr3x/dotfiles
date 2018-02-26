@@ -37,7 +37,7 @@ $ sudo mount -a
 $ sudo sed -i s/^SELINUX=.*$/SELINUX=permissive/g /etc/selinux/config
 ```
 
-#### Install Discord, Steam, GNOME Tweaks, Transmission, mpv, and youtube-dl:
+#### Install software:
 ```
 $ sudo dnf -y install discord libatomic steam gnome-tweak-tool transmission-gtk mpv youtube-dl
 ```
