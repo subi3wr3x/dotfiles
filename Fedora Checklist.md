@@ -37,16 +37,9 @@ $ sudo mount -a
 $ sudo sed -i s/^SELINUX=.*$/SELINUX=permissive/g /etc/selinux/config
 ```
 
-#### Install GNOME Tweaks, Transmission, mpv, and youtube-dl:
+#### Install Discord, Steam, GNOME Tweaks, Transmission, mpv, and youtube-dl:
 ```
-$ sudo dnf -y install gnome-tweak-tool transmission-gtk mpv youtube-dl
-```
-
-#### Install Discord, Steam, and Spotify via Flatpak:
-```
-$ flatpak install --from https://flathub.org/repo/appstream/com.discordapp.Discord.flatpakref -y
-$ flatpak install --from https://flathub.org/repo/appstream/com.valvesoftware.Steam.flatpakref -y
-$ flatpak install --from https://flathub.org/repo/appstream/com.spotify.Client.flatpakref -y
+$ sudo dnf -y install discord libatomic steam gnome-tweak-tool transmission-gtk mpv youtube-dl
 ```
 
 #### Firefox "Open With":
