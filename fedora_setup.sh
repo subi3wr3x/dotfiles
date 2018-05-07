@@ -1,7 +1,9 @@
-# Enable RPM Fusion "free" and "nonfree" repos:
+# Enable RPM Fusion "free" repo:
 sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 
-# Install Nvidia drivers and disable Wayland in GDM:
+# Enable Nvidia repo, install driver, and set GDM to use Xorg:
+sudo dnf -y install fedora-workstation-repositories
+sudo dnf -y config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
 sudo dnf -y install xorg-x11-drv-nvidia akmod-nvidia && sudo dnf update -y
 sudo sed -i '/WaylandEnable=false/s/^#//' /etc/gdm/custom.conf
 
