@@ -19,7 +19,7 @@ gsettings set org.gnome.settings-daemon.plugins.xsettings hinting "slight"
 # Add aliases:
 echo "alias packagecount='rpm -qa | wc -l'" >> ~/.bashrc
 echo "alias clearswap='sudo swapoff -a && sudo swapon -a'" >> ~/.bashrc
-echo "alias fullupdate='sudo dnf update -y && sudo dnf autoremove -y && sudo dnf clean all'" >> ~/.bashrc
+echo "alias fullupdate='sudo dnf update -y && sudo dnf autoremove -y && sudo dnf clean all && flatpak update'" >> ~/.bashrc
 
 # Auto-mount storage drive:
 sudo mkdir /mnt/Storage/
