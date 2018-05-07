@@ -1,5 +1,5 @@
 # Enable RPM Fusion "free" and "nonfree" repos:
-sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 
 # Install Nvidia drivers and disable Wayland in GDM:
 sudo dnf -y install xorg-x11-drv-nvidia akmod-nvidia && sudo dnf update -y
@@ -27,6 +27,12 @@ sudo mount -a
 # Set SELinux to permissive mode:
 sudo sed -i s/^SELINUX=.*$/SELINUX=permissive/g /etc/selinux/config
 
+# Enable Flathub and install software:
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo -y
+flatpak install flathub com.discordapp.Discord -y
+flatpak install flathub com.spotify.Client -y
+flatpak install flathub com.valvesoftware.Steam -y
+
 # Install/Remove software:
-sudo dnf -y install discord libatomic steam gnome-music gnome-tweak-tool transmission-gtk mpv youtube-dl
+sudo dnf -y install gnome-music gnome-tweak-tool transmission-gtk mpv youtube-dl compat-ffmpeg28
 sudo dnf -y remove gnome-maps gnome-photos rhythmbox gnome-weather
