@@ -30,7 +30,7 @@ sudo mount -a
 sudo sed -i s/^SELINUX=.*$/SELINUX=permissive/g /etc/selinux/config
 
 # Enable Flathub and install software:
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo -y
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub com.discordapp.Discord -y
 flatpak install flathub com.spotify.Client -y
 flatpak install flathub com.valvesoftware.Steam -y
