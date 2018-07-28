@@ -26,6 +26,9 @@ sudo mkdir /mnt/Storage/
 sudo bash -c 'echo -e "UUID=64a9314e-07d8-47dd-94a6-d1a55851b12d /mnt/Storage/ ext4 defaults 0 0" >> /etc/fstab'
 sudo mount -a
 
+# Symlink music from storage drive
+ln -s /mnt/Storage/Music/ ~/Music/
+
 # Set SELinux to permissive mode:
 sudo sed -i s/^SELINUX=.*$/SELINUX=permissive/g /etc/selinux/config
 
