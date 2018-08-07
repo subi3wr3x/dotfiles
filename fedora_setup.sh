@@ -30,7 +30,7 @@ sudo mount -a
 ln -s /mnt/Storage/Music/ ~/Music/
 
 # Set SELinux to permissive mode:
-sudo sed -i s/^SELINUX=.*$/SELINUX=permissive/g /etc/selinux/config
+# sudo setenforce 0
 
 # Enable Flathub and install software:
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
