@@ -5,7 +5,6 @@ sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-r
 sudo dnf -y install fedora-workstation-repositories
 sudo dnf -y config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
 sudo dnf -y install xorg-x11-drv-nvidia akmod-nvidia && sudo dnf update -y
-sudo sed -i '/WaylandEnable=false/s/^#//' /etc/gdm/custom.conf
 
 # Fix font rendering:
 sudo dnf -y install freetype-freeworld
@@ -40,4 +39,4 @@ flatpak install flathub com.valvesoftware.Steam -y
 
 # Install/Remove software:
 sudo dnf -y install gnome-music gnome-tweak-tool transmission-gtk mpv youtube-dl compat-ffmpeg28
-sudo dnf -y remove gnome-maps gnome-photos rhythmbox gnome-weather
+sudo dnf -y remove gnome-maps gnome-photos rhythmbox gnome-weather cheese
