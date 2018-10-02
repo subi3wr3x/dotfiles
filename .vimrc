@@ -17,5 +17,11 @@ set softtabstop=4
 set expandtab
 
 " Set color scheme
-" colorscheme base16-default-dark
-" let base16colorspace=256
+let base16colorspace=256
+colorscheme base16-default-dark
+
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
