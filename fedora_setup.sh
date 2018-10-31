@@ -4,7 +4,7 @@ sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-r
 # Enable Nvidia repo, install driver, and set GDM to use Xorg:
 sudo dnf -y install fedora-workstation-repositories
 sudo dnf -y config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
-sudo dnf -y install xorg-x11-drv-nvidia akmod-nvidia && sudo dnf update -y
+sudo dnf -y install xorg-x11-drv-nvidia akmod-nvidia && sudo dnf upgrade -y
 sudo sed -i '/WaylandEnable=false/s/^#//' /etc/gdm/custom.conf
 
 # Fix font rendering:
@@ -19,7 +19,7 @@ gsettings set org.gnome.settings-daemon.plugins.xsettings hinting "slight"
 # Add aliases:
 echo "alias packagecount='rpm -qa | wc -l'" >> ~/.bashrc
 echo "alias clearswap='sudo swapoff -a && sudo swapon -a'" >> ~/.bashrc
-echo "alias fullupdate='sudo dnf update -y && sudo dnf autoremove -y && sudo dnf clean all && flatpak update'" >> ~/.bashrc
+echo "alias fullupdate='sudo dnf upgrade -y && sudo dnf autoremove -y && sudo dnf clean all'" >> ~/.bashrc
 
 # Auto-mount storage drive:
 sudo mkdir /mnt/Storage/
