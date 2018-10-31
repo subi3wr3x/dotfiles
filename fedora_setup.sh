@@ -34,7 +34,7 @@ ln -s /mnt/Storage/Music/ ~/Music/
 
 # Install/Remove software:
 sudo dnf -y install gnome-music gnome-tweak-tool transmission-gtk mpv youtube-dl compat-ffmpeg28
-sudo dnf -y remove gnome-maps gnome-photos rhythmbox gnome-weather cheese
+sudo dnf -y remove gnome-maps gnome-photos rhythmbox gnome-weather cheese gnome-clocks gnome-contacts gnome-documents
 
 # Enable Flathub and install software:
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
