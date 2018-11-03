@@ -22,7 +22,7 @@ echo "alias fullupdate='sudo dnf upgrade -y && sudo dnf autoremove -y && sudo dn
 
 # Auto-mount storage drive:
 sudo mkdir /mnt/Storage/
-sudo bash -c 'echo -e "UUID=058D8AF8507F01D9 /mnt/Storage ntfs defaults 0 0" >> /etc/fstab'
+sudo bash -c 'echo -e "UUID=bb1a411a-278e-4218-ab85-fb31bc3807fb /mnt/Storage ext4 defaults 0 0" >> /etc/fstab'
 sudo mount -a
 
 # Symlink music from storage drive
