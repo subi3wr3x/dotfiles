@@ -6,12 +6,6 @@ sudo dnf -y install fedora-workstation-repositories
 sudo dnf -y config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
 sudo dnf -y install xorg-x11-drv-nvidia akmod-nvidia && sudo dnf upgrade -y
 
-# Remove 'rhgb' kernel parameter (breaks Nvidia driver with newer kernels):
-sed -i 's/rhgb //g' /etc/default/grub
-grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
-# Note the above command is for EFI only, if you're on BIOS, use this instead:
-# grub2-mkconfig -o /boot/grub2/grub.cfg
-
 # Fix font rendering:
 sudo dnf -y install freetype-freeworld
 sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-slight.conf /etc/fonts/conf.d/
