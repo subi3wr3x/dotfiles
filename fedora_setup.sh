@@ -16,6 +16,8 @@ gsettings set org.gnome.settings-daemon.plugins.xsettings antialiasing "rgba"
 gsettings set org.gnome.settings-daemon.plugins.xsettings hinting "slight"
 
 # Add aliases:
+echo "alias xclip-i='xclip -i -selection clipboard'" >> ~/.bashrc
+echo "alias xclip-o='xclip -o -selection clipboard'" >> ~/.bashrc
 echo "alias packagecount='rpm -qa | wc -l'" >> ~/.bashrc
 echo "alias clearswap='sudo swapoff -a && sudo swapon -a'" >> ~/.bashrc
 echo "alias fullupdate='sudo dnf upgrade -y && sudo dnf autoremove -y && sudo dnf clean all'" >> ~/.bashrc
@@ -35,7 +37,7 @@ ln -s /mnt/Storage/Music/ ~/Music/
 sudo echo "vm.swappiness = 10" >> /etc/sysctl.d/99-sysctl.conf
 
 # Install/Remove software:
-sudo dnf -y install gnome-music gnome-tweak-tool transmission-gtk mpv youtube-dl compat-ffmpeg28
+sudo dnf -y install gnome-music gnome-tweak-tool transmission-gtk mpv youtube-dl compat-ffmpeg28 xclip
 sudo dnf -y remove gnome-maps gnome-photos rhythmbox gnome-weather cheese gnome-clocks gnome-contacts gnome-documents totem
 
 # Enable Flathub and install software:
