@@ -18,7 +18,7 @@ gsettings set org.gnome.settings-daemon.plugins.xsettings hinting "slight"
 # Add aliases:
 echo "alias xclip-i='xclip -i -selection clipboard'" >> ~/.bashrc
 echo "alias xclip-o='xclip -o -selection clipboard'" >> ~/.bashrc
-echo "alias packagecount='rpm -qa | wc -l'" >> ~/.bashrc
+echo "alias packagecount='dnf list installed | wc -l'" >> ~/.bashrc
 echo "alias clearswap='sudo swapoff -a && sudo swapon -a'" >> ~/.bashrc
 echo "alias fullupdate='sudo dnf upgrade -y && sudo dnf autoremove -y && sudo dnf clean all'" >> ~/.bashrc
 
