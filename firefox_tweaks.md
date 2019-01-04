@@ -1,3 +1,4 @@
+|                              |                                   |               |
 |------------------------------|-----------------------------------|---------------|
 | Enable hardware acceleration | layers.acceleration.force-enabled |     true      |
 | Disable pocket               | extensions.pocket.enabled         |     false     |
