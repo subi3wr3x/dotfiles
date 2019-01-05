@@ -38,7 +38,7 @@ ln -s /mnt/Storage/Music/ ~/Music/
 # sudo setenforce 0
 
 # Set Swappiness value to 10
-sudo echo "vm.swappiness = 10" >> /etc/sysctl.d/99-sysctl.conf
+echo 'vm.swappiness = 10' | sudo tee -a /etc/sysctl.d/99-sysctl.conf
 
 # Install/Remove software:
 sudo dnf -y install gnome-music gnome-tweak-tool transmission-gtk mpv youtube-dl compat-ffmpeg28 xclip
