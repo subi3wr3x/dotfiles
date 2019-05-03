@@ -6,22 +6,16 @@ sudo dnf -y install fedora-workstation-repositories
 sudo dnf -y config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
 sudo dnf -y install xorg-x11-drv-nvidia akmod-nvidia && sudo dnf upgrade -y
 
-# Remove 'rhgb' kernel parameter:
-sed -i 's/rhgb //g' /etc/default/grub
-grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
-
 # Fix font rendering:
-sudo dnf -y install freetype-freeworld
-sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-slight.conf /etc/fonts/conf.d/
-sudo ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
-sudo ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
-sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
-gsettings set org.gnome.settings-daemon.plugins.xsettings antialiasing "rgba"
-gsettings set org.gnome.settings-daemon.plugins.xsettings hinting "slight"
+# sudo dnf -y install freetype-freeworld
+# sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-slight.conf /etc/fonts/conf.d/
+# sudo ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
+# sudo ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
+# sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
+# gsettings set org.gnome.settings-daemon.plugins.xsettings antialiasing "rgba"
+# gsettings set org.gnome.settings-daemon.plugins.xsettings hinting "slight"
 
 # Add aliases:
-echo "alias xclip-i='xclip -i -selection clipboard'" >> ~/.bashrc
-echo "alias xclip-o='xclip -o -selection clipboard'" >> ~/.bashrc
 echo "alias packagecount='dnf list installed | wc -l'" >> ~/.bashrc
 echo "alias clearswap='sudo swapoff -a && sudo swapon -a'" >> ~/.bashrc
 echo "alias fullupdate='sudo dnf upgrade -y && sudo dnf autoremove -y && sudo dnf clean all'" >> ~/.bashrc
