@@ -7,13 +7,11 @@ sudo dnf -y config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
 sudo dnf -y install xorg-x11-drv-nvidia akmod-nvidia && sudo dnf upgrade -y
 
 # Fix font rendering:
-# sudo dnf -y install freetype-freeworld
-# sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-slight.conf /etc/fonts/conf.d/
-# sudo ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
-# sudo ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
-# sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
-# gsettings set org.gnome.settings-daemon.plugins.xsettings antialiasing "rgba"
-# gsettings set org.gnome.settings-daemon.plugins.xsettings hinting "slight"
+sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-slight.conf /etc/fonts/conf.d/
+sudo ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
+sudo ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
+gsettings set org.gnome.settings-daemon.plugins.xsettings antialiasing "rgba"
+gsettings set org.gnome.settings-daemon.plugins.xsettings hinting "slight"
 
 # Add aliases:
 echo "alias packagecount='dnf list installed | wc -l'" >> ~/.bashrc
@@ -27,9 +25,6 @@ sudo mount -a
 
 # Symlink music from storage drive
 ln -s /mnt/Storage/Music/ ~/Music/
-
-# Set SELinux to permissive mode:
-# sudo setenforce 0
 
 # Set Swappiness value to 10
 echo 'vm.swappiness = 10' | sudo tee -a /etc/sysctl.d/99-sysctl.conf
