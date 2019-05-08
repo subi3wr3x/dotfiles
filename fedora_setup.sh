@@ -18,9 +18,15 @@ gsettings set org.gnome.settings-daemon.plugins.xsettings antialiasing "rgba"
 gsettings set org.gnome.settings-daemon.plugins.xsettings hinting "slight"
 
 # Add aliases:
-echo "alias packagecount='dnf list installed | wc -l'" >> ~/.bashrc
-echo "alias clearswap='sudo swapoff -a && sudo swapon -a'" >> ~/.bashrc
-echo "alias fullupdate='sudo dnf upgrade -y && sudo dnf autoremove -y && sudo dnf clean all'" >> ~/.bashrc
+cat <<EOF >> ~/.bashrc
+alias packagecount='dnf list installed | wc -l'
+alias clearswap='sudo swapoff -a && sudo swapon -a'
+alias fullupdate='sudo dnf upgrade -y && sudo dnf autoremove -y && sudo dnf clean all'
+
+ytclip () {
+  ffmpeg -i "$(youtube-dl -f best -g "$3")" -ss $1 -to $2 -c copy ~/Videos/clip.mp4
+}
+EOF
 
 # Auto-mount storage drive:
 sudo mkdir /mnt/Storage/
@@ -34,7 +40,7 @@ ln -s /mnt/Storage/Music/ ~/Music/
 echo 'vm.swappiness = 10' | sudo tee -a /etc/sysctl.d/99-sysctl.conf
 
 # Install/Remove software:
-sudo dnf -y install gnome-music gnome-tweak-tool transmission-gtk mpv youtube-dl ffmpeg compat-ffmpeg28 xclip
+sudo dnf -y install gnome-music gnome-tweak-tool transmission-gtk mpv youtube-dl ffmpeg compat-ffmpeg28
 sudo dnf -y remove gnome-maps gnome-photos rhythmbox gnome-weather cheese gnome-clocks gnome-contacts gnome-documents totem
 
 # Enable Flathub and install software:
