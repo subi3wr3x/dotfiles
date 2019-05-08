@@ -5,6 +5,7 @@ sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-r
 sudo dnf -y install fedora-workstation-repositories
 sudo dnf -y config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
 sudo dnf -y install xorg-x11-drv-nvidia akmod-nvidia && sudo dnf upgrade -y
+sudo grubby --update-kernel=ALL --args='nvidia-drm.modeset=1'
 
 # Enable Cisco OpenH264 repo and install codec:
 sudo dnf config-manager --set-enabled fedora-cisco-openh264
