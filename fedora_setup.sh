@@ -42,7 +42,7 @@ echo 'vm.swappiness = 10' | sudo tee -a /etc/sysctl.d/99-sysctl.conf
 
 # install/Remove software:
 sudo dnf -y install gnome-music gnome-tweak-tool transmission-gtk mpv youtube-dl ffmpeg compat-ffmpeg28
-sudo dnf -y remove gnome-maps gnome-photos rhythmbox gnome-weather cheese gnome-clocks gnome-contacts gnome-documents totem
+sudo dnf -y remove gnome-maps gnome-photos rhythmbox gnome-weather cheese gnome-clocks gnome-contacts gnome-documents totem gdouros-symbola-fonts
 
 # enable Flathub and install software:
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
