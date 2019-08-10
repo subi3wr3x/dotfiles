@@ -7,9 +7,8 @@ sudo dnf -y config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
 sudo dnf -y install xorg-x11-drv-nvidia akmod-nvidia && sudo dnf upgrade -y
 sudo grubby --update-kernel=ALL --args='nvidia-drm.modeset=1'
 
-# enable Cisco OpenH264 repo and install codec:
-sudo dnf config-manager --set-enabled fedora-cisco-openh264
-sudo dnf install gstreamer1-plugin-openh264 mozilla-openh264
+# install multimedia codecs:
+sudo dnf -y groupupdate Multimedia
 
 # fix font rendering:
 sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-slight.conf /etc/fonts/conf.d/
