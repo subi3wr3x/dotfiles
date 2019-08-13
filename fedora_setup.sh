@@ -1,5 +1,7 @@
+#!/bin/sh
+
 # enable RPM Fusion "free" repo:
-sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-'$(rpm -E %fedora)'.noarch.rpm
 
 # enable Nvidia repo and install driver:
 sudo dnf -y install fedora-workstation-repositories
@@ -11,8 +13,8 @@ sudo grubby --update-kernel=ALL --args='nvidia-drm.modeset=1'
 sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-slight.conf /etc/fonts/conf.d/
 sudo ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
 sudo ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
-gsettings set org.gnome.settings-daemon.plugins.xsettings antialiasing "rgba"
-gsettings set org.gnome.settings-daemon.plugins.xsettings hinting "slight"
+gsettings set org.gnome.settings-daemon.plugins.xsettings antialiasing 'rgba'
+gsettings set org.gnome.settings-daemon.plugins.xsettings hinting 'slight'
 
 # add aliases:
 cat <<EOF >> ~/.bashrc
@@ -21,7 +23,7 @@ alias clearswap='sudo swapoff -a && sudo swapon -a'
 alias fullupdate='sudo dnf upgrade -y && sudo dnf autoremove -y && sudo dnf clean all'
 
 ytclip () {
-  ffmpeg -i "$(youtube-dl -f best -g "$3")" -ss $1 -to $2 -c copy ~/Videos/clip.mp4
+  ffmpeg -i '$(youtube-dl -f best -g "$3")' -ss $1 -to $2 -c copy ~/Videos/clip.mp4
 }
 EOF
 
