@@ -23,7 +23,7 @@ alias clearswap='sudo swapoff -a && sudo swapon -a'
 alias fullupdate='sudo dnf upgrade -y && sudo dnf autoremove -y && sudo dnf clean all'
 
 ytclip () {
-  ffmpeg -i '$(youtube-dl -f best -g "$3")' -ss $1 -to $2 -c copy ~/Videos/clip.mp4
+  ffmpeg -i "$(youtube-dl -f best -g "$3")" -ss $1 -to $2 -async 1 ~/Videos/clip.mp4
 }
 EOF
 
@@ -38,11 +38,8 @@ ln -s /mnt/Storage/Music/ ~/Music/
 # set swappiness value to 10
 echo 'vm.swappiness = 10' | sudo tee -a /etc/sysctl.d/99-sysctl.conf
 
-# install multimedia codecs:
-sudo dnf -y groupupdate Multimedia
-
 # install/Remove software:
-sudo dnf -y install gnome-music gnome-tweak-tool transmission-gtk mpv youtube-dl ffmpeg
+sudo dnf -y install gnome-music gnome-tweak-tool transmission-gtk mpv youtube-dl ffmpeg compat-ffmpeg28
 sudo dnf -y remove gnome-maps gnome-photos rhythmbox gnome-weather cheese gnome-clocks gnome-contacts gnome-documents totem gdouros-symbola-fonts
 
 # enable Flathub and install software:
